@@ -351,4 +351,5 @@ public class PostCustomAdapter extends ParseQueryAdapter<ParseObject> {
 		return v;
 	}
 
+
 }
