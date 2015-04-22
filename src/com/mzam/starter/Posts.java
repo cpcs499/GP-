@@ -72,6 +72,8 @@ public class Posts extends Activity {
 		TP.startAnimation(shake);
 		Animation shake2 = AnimationUtils.loadAnimation(this, R.anim.pull_in_right);
 		PP.startAnimation(shake2);
+		EP.startAnimation(shake2);
+		
 		
 		TP.setOnClickListener(new View.OnClickListener() {
 			
@@ -97,7 +99,8 @@ public class Posts extends Activity {
 				TextView username = (TextView) textPPost.findViewById(R.id.textView2);
 				username.setText("@"+curr.getUsername());
 				username.setTypeface(ft);
-				
+				postdetail.setTypeface(ft);
+
 				ParseFile imageFile = curr.getParseFile("ProfilePic");
 				if (imageFile != null) {
 					profilepic.setParseFile(imageFile);
@@ -164,6 +167,9 @@ public class Posts extends Activity {
 											//Add a relation between the Post and Comment
 											//myshop.put("parent", myPost);
 											MyPost.saveInBackground(); 
+											Toast.makeText(getApplicationContext(),
+													"Post successfully uploaded",
+													Toast.LENGTH_LONG).show();
 										
 										 }
 							
@@ -173,6 +179,9 @@ public class Posts extends Activity {
 									public void onClick(DialogInterface dialog,
 											int id) {
 										dialog.cancel();
+										Toast.makeText(getApplicationContext(),
+												"Post successfully canceled",
+												Toast.LENGTH_LONG).show();
 									}
 								});
 
@@ -207,6 +216,8 @@ public class Posts extends Activity {
 				TextView username = (TextView) photoPPost.findViewById(R.id.textView2);
 				username.setText("@"+curr.getUsername());
 				username.setTypeface(ft);
+				username.setTypeface(ft);
+
 				
 				ParseFile imageFile = curr.getParseFile("ProfilePic");
 				if (imageFile != null) {
@@ -297,6 +308,9 @@ public class Posts extends Activity {
 											}
 											
 											MyPost.saveInBackground(); 
+											Toast.makeText(getApplicationContext(),
+													"Post successfully uploaded",
+													Toast.LENGTH_LONG).show();
 										 }
 							
 								})
@@ -305,6 +319,9 @@ public class Posts extends Activity {
 												public void onClick(DialogInterface dialog,
 														int id) {
 													dialog.cancel();
+													Toast.makeText(getApplicationContext(),
+															"Post successfully canceled",
+															Toast.LENGTH_LONG).show();
 												}
 											});
 			
@@ -332,6 +349,10 @@ public class Posts extends Activity {
 				event_date = (EditText) EventPost.findViewById(R.id.editText3);
 
 				event_date.setTypeface(font);
+				event_title.setTypeface(font);
+				postdetail.setTypeface(font);
+
+
 				
 				//final String post = postdetail.getText().toString();
 				final ParseImageView profilepic = (ParseImageView) EventPost.findViewById(R.id.imageView1);
@@ -344,6 +365,7 @@ public class Posts extends Activity {
 				TextView username = (TextView) EventPost.findViewById(R.id.textView2);
 				username.setText("@"+curr.getUsername());
 				username.setTypeface(ft);
+				
 				
 				ParseFile imageFile = curr.getParseFile("ProfilePic");
 				if (imageFile != null) {
@@ -489,7 +511,11 @@ public class Posts extends Activity {
 												MyPost.put("event_date",event_date.getText().toString());
 											}
 											
-											MyPost.saveInBackground(); 
+											MyPost.saveInBackground();
+											Toast.makeText(getApplicationContext(),
+													"Post successfully uploaded",
+													Toast.LENGTH_LONG).show();
+											
 										
 										 }
 							
@@ -499,6 +525,9 @@ public class Posts extends Activity {
 									public void onClick(DialogInterface dialog,
 											int id) {
 										dialog.cancel();
+										Toast.makeText(getApplicationContext(),
+												"Post successfully canceled",
+												Toast.LENGTH_LONG).show();
 									}
 								});
 
@@ -545,6 +574,8 @@ public class Posts extends Activity {
 			TP.startAnimation(shake);
 			Animation shake2 = AnimationUtils.loadAnimation(this, R.anim.pull_in_right);
 			PP.startAnimation(shake2);
+			EP.startAnimation(shake2);
+
 		}
 	}
 	
