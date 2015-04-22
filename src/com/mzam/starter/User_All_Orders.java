@@ -269,7 +269,18 @@ public class User_All_Orders extends Activity {
 
     }
     //----------------------------- END Adapter Class
+private void createCutomActionBarTitle(){
+        this.getActionBar().setDisplayShowCustomEnabled(true);
+        this.getActionBar().setDisplayShowTitleEnabled(false);
 
+        LayoutInflater inflator = LayoutInflater.from(this);
+        View v = inflator.inflate(R.layout.custom_action_bar, null);
+        Typeface tf = Typeface.createFromAsset(getAssets(),"Fonts/Rosemary.ttf");
+        ((TextView)v.findViewById(R.id.titleFragment1)).setTypeface(tf);
+        ((TextView)v.findViewById(R.id.titleFragment2)).setTypeface(tf);
+        //assign the view to the actionbar
+        this.getActionBar().setCustomView(v);
+    }
 
 
 	
