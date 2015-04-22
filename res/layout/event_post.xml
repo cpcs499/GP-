@@ -2,7 +2,9 @@
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/AbsoluteLayout1"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:background="#fbfcf7"
+    android:clickable="true" >
 
     <com.parse.ParseImageView
         android:id="@+id/imageView1"
