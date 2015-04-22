@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AddPostComment extends Activity {
 	Context context = this;
@@ -65,6 +66,8 @@ public class AddPostComment extends Activity {
 		
 		 final TextView LetterCounter = (TextView)findViewById(R.id.textView3);
 		 LetterCounter.setTypeface(ft);
+			username.setTypeface(ft);
+
 		postdetail.addTextChangedListener(new TextWatcher() {
 			 
 			   public void afterTextChanged(Editable s) {
@@ -101,6 +104,9 @@ public class AddPostComment extends Activity {
 				MyComment.put("user_id",ParseUser.getCurrentUser());
 				MyComment.put("post_id",value);
 				MyComment.saveInBackground(); 
+				Toast.makeText(getApplicationContext(),
+						"Comment successfully uploaded",
+						Toast.LENGTH_LONG).show();
 				finish();
 			}
 		});
